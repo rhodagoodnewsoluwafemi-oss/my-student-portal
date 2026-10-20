@@ -88,7 +88,9 @@ button:disabled {
     line-height: 1.5;
     overflow-wrap: anywhere;
 }
-
+.errorMessage{
+    color: red;
+}
 #result {
     margin-top: 15px;
 }

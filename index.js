@@ -1,3 +1,30 @@
+const form = document.getElementById("result-form");
+const nameInput = document.getElementById("student-name");
+const scoreInput = document.getElementById("student-score");
+const checkBtn = document.getElementById("check-btn");
+const message = document.getElementById("message");
+const errorMessage = document.getElementById("errorMessage");
+const result = document.getElementById("result");
+
+function calculateGrade(score) {
+    if (score >= 70) {
+        return "A";
+    } else if (score >= 60) {
+        return "B";
+    } else if (score >= 50) {
+        return "C";
+    } else if (score >= 45) {
+        return "D";
+    } else {
+        return "F";
+    }
+}
+
+function waitTwoSeconds() {
+    return new Promise((resolve) => {
+        setTimeout(resolve, 2000);
+    });
+}
 form.addEventListener("submit", async function (event) {
     event.preventDefault();
 
@@ -72,7 +99,7 @@ form.addEventListener("submit", async function (event) {
 
     } catch (error) {
         // Display an error if something goes wrong
-        message.textContent = error.message;
+        errorMessage.textContent = error.message;
 
     } finally {
         // Always enable the button again
